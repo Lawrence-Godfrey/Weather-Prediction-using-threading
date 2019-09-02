@@ -8,23 +8,47 @@ import java.io.PrintWriter;
 public class CloudData {
 
 	Vector[][][] advection; // in-plane regular grid of wind vectors, that evolve over time
-	float [][][] convection; // vertical air movement strength, that evolves over time
-	int [][][] classification; // cloud type per grid point, evolving over time
+	float[][][] convection; // vertical air movement strength, that evolves over time
+	int[][][] classification; // cloud type per grid point, evolving over time
 	int dimx, dimy, dimt; // data dimensions
 
+	Vector averageWind;
+
 	// overall number of elements in the timeline grids
-	int dim(){
-		return dimt*dimx*dimy;
+	int dim() {
+		return dimt * dimx * dimy;
 	}
-	
+
 	// convert linear position into 3D location in simulation grid
-	void locate(int pos, int [] ind)
-	{
-		ind[0] = (int) pos / (dimx*dimy); // t
-		ind[1] = (pos % (dimx*dimy)) / dimy; // x
+	void locate(int pos, int[] ind) {
+		ind[0] = (int) pos / (dimx * dimy); // t
+		ind[1] = (pos % (dimx * dimy)) / dimy; // x
 		ind[2] = pos % (dimy); // y
 	}
-	
+
+	void classify() {
+		for (int t = 0; t < dimt; t++)
+			for (int x = 0; x < dimx; x++)
+				for (int y = 0; y < dimy; y++) {
+					//advection[t][x][y];
+				}
+	}
+
+	void findAve() {
+		averageWind = new Vector();
+		for (int t = 0; t < dimt; t++){
+			for (int x = 0; x < dimx; x++){
+				for (int y = 0; y < dimy; y++) {
+					averageWind.x += advection[t][x][y].x;
+					averageWind.y += advection[t][x][y].y;
+					//System.out.println(averageWind.x + " " + averageWind.y);
+				}
+			}
+		}
+		averageWind.x = averageWind.x/dim();
+		averageWind.y = averageWind.y/dim();
+	}
+
 	// read cloud simulation data from file
 	void readData(String fileName){ 
 		try{ 
@@ -34,7 +58,7 @@ public class CloudData {
 			dimt = sc.nextInt();
 			dimx = sc.nextInt(); 
 			dimy = sc.nextInt();
-			
+			//System.out.println(dimt+" "+dimx + " "+dimy);
 			// initialize and load advection (wind direction and strength) and convection
 			advection = new Vector[dimt][dimx][dimy];
 			convection = new float[dimt][dimx][dimy];
@@ -42,9 +66,10 @@ public class CloudData {
 				for(int x = 0; x < dimx; x++)
 					for(int y = 0; y < dimy; y++){
 						advection[t][x][y] = new Vector();
-						advection[t][x][y].x = sc.nextFloat();
-						advection[t][x][y].y = sc.nextFloat();
-						convection[t][x][y] = sc.nextFloat();
+						advection[t][x][y].x = Float.parseFloat(sc.next());
+						advection[t][x][y].y = Float.parseFloat(sc.next());
+						convection[t][x][y] = Float.parseFloat(sc.next());
+						//System.out.println(advection[t][x][y].x+" "+advection[t][x][y].y + " "+convection[t][x][y]);
 					}
 			
 			classification = new int[dimt][dimx][dimy];
