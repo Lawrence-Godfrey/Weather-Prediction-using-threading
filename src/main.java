@@ -6,6 +6,7 @@ public class main {
         cd.readData("/home/lawrence/IdeaProjects/untitled/src/simplesample_input.txt");
         cd.findAve();
         System.out.println(cd.averageWind.x + " , " + cd.averageWind.y);
-
+        cd.classify();
+        cd.writeData("/home/lawrence/IdeaProjects/untitled/src/output.txt", cd.averageWind );
     }
 }

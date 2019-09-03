@@ -27,12 +27,56 @@ public class CloudData {
 	}
 
 	void classify() {
-		for (int t = 0; t < dimt; t++)
-			for (int x = 0; x < dimx; x++)
+
+
+		for (int t = 0; t < dimt; t++) {
+			for (int x = 0; x < dimx; x++) {
 				for (int y = 0; y < dimy; y++) {
-					//advection[t][x][y];
+
+					float avex=0;
+					float avey=0;
+					int dividor = 0;
+
+					for (int i = -1; i <= 1; i++) {
+						for (int j = -1; j <= 1; j++) {
+							//System.out.println(x+i+" , "+ (y+j));
+							if (!((x+i) < 0) && !((x+i) > dimx-1)) {
+								if(!((y+j) < 0) && !((y+j) > dimy-1)){
+									if (!((i == 0) && (j == 0))) {
+										avex += advection[t][x + i][y + j].x;
+										avey += advection[t][x + i][y + j].y;
+										dividor++;
+										System.out.println(x + i + " , " + (y + j));
+									}
+								}
+							}
+
+						}
+					}
+					System.out.println("divide");
+					avex=avex/dividor;
+					avey=avey/dividor;
+					double ave_magnitude = Math.sqrt(avex*avex + avey*avey);
+					//System.out.println(dividor + " , " + ave_magnitude);
+					if(Math.abs(convection[t][x][y])>ave_magnitude)
+					{
+						classification[t][x][y]=0;
+					}
+					else if(ave_magnitude>0.2 && (ave_magnitude >= Math.abs(convection[t][x][y])))
+					{
+						classification[t][x][y]=1;
+					}
+					else
+					{
+						classification[t][x][y]=2;
+					}
+
+
+					}
 				}
-	}
+			}
+		}
+
 
 	void findAve() {
 		averageWind = new Vector();
