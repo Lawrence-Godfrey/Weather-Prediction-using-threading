@@ -1,7 +1,4 @@
-import java.util.AbstractList;
-import java.util.List;
-
-public class Vector<E> extends AbstractList<E> implements List<E>
+public class Vector
 {
     protected Object[] elementData;
     protected float x;
@@ -18,15 +15,5 @@ public class Vector<E> extends AbstractList<E> implements List<E>
 
     public Vector() {
         this(10);
-    }
-
-    @Override
-    public E get(int i) {
-        return null;
-    }
-
-    @Override
-    public int size() {
-        return 0;
     }
 }
