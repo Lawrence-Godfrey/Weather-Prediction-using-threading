@@ -13,7 +13,7 @@ public class CloudData {
 	int[][][] classification; // cloud type per grid point, evolving over time
 	int dimx, dimy, dimt; // data dimensions
 
-	Vector averageWind;
+	Vector averageWind = new Vector();
 
 	// overall number of elements in the timeline grids
 	int dim() {

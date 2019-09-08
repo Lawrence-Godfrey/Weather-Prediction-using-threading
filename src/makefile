@@ -7,7 +7,10 @@ JC = javac
 CLASSES = \
 	Vector.java \
 	CloudData.java \
-	main.java
+	main.java \
+	Classify.java \
+	main_threaded.java \
+	generator.java 
 
 MAIN = main
 
@@ -15,9 +18,6 @@ default: classes
 
 classes: $(CLASSES:.java=.class)
 
-run: $(MAIN).class
-	$(JVM) $(MAIN)
-
-
-clean: $(RM) *.class
+clean:
+	rm *.class
 

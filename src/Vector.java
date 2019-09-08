@@ -16,4 +16,10 @@ public class Vector
     public Vector() {
         this(10);
     }
+
+    public void divide(Vector numerator, int divider)
+    {
+        numerator.x=numerator.x/divider;
+        numerator.y=numerator.y/divider;;
+    }
 }

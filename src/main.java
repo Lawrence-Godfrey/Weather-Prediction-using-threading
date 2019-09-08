@@ -12,12 +12,53 @@ public class main {
     public static void main(String [] args)
     {
         CloudData cd = new CloudData();
-        cd.readData("/home/lawrence/IdeaProjects/untitled/src/largesample_input.txt");
-        cd.findAve();
-        //System.out.println(cd.averageWind.x + " , " + cd.averageWind.y);
+        cd.readData(args[0]);
         tick();
+        cd.findAve();
         cd.classify();
         System.out.println(tock());
-        cd.writeData("/home/lawrence/IdeaProjects/untitled/src/output.txt", cd.averageWind );
+        tick();
+
+        cd = new CloudData();
+        cd.readData(args[0]);
+        tick();
+        cd.findAve();
+        cd.classify();
+        System.out.println(tock());
+        tick();
+
+        cd = new CloudData();
+        cd.readData(args[0]);
+        tick();
+        cd.findAve();
+        cd.classify();
+        System.out.println(tock());
+        tick();
+
+        cd = new CloudData();
+        cd.readData(args[0]);
+        tick();
+        cd.findAve();
+        cd.classify();
+        System.out.println(tock());
+        tick();
+
+        cd = new CloudData();
+        cd.readData(args[0]);
+        tick();
+        cd.findAve();
+        cd.classify();
+        System.out.println(tock());
+        tick();
+
+        cd = new CloudData();
+        cd.readData(args[0]);
+        tick();
+        cd.findAve();
+        cd.classify();
+        System.out.println(tock());
+        tick();
+
+        cd.writeData(args[1], cd.averageWind );
     }
 }
