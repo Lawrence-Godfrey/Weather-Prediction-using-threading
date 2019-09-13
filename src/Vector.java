@@ -1,3 +1,7 @@
+/**
+ * Simple class to hold x and y value of vector
+ * @author Lawrence Godfrey
+ */
 public class Vector
 {
     protected Object[] elementData;

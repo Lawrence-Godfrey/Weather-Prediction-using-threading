@@ -1,5 +1,9 @@
 import java.util.concurrent.ForkJoinPool;
-
+/**
+ * runs threaded version 6 times and records and prints times.
+ * Also uses ForkJoinPool to invoke Classify class.
+ * @author Lawrence Godfrey
+ */
 public class main_threaded
 {
     static long startTime = 0;

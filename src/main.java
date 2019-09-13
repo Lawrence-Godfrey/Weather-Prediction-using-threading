@@ -1,3 +1,8 @@
+/**
+ * Runs unthreaded version 6 times and prints out recorded times in ms
+ * takes in an input file name and output file name.
+ * @author Lawrence Godfrey
+ */
 public class main {
 
     static long startTime = 0;
