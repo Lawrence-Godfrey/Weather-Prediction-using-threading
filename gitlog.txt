@@ -1,0 +1,41 @@
+commit c4fa011819fb5a95c314e967275ae51e2b03c421
+Author: Lawrence Godfrey <gdflaw001@myuct.ac.za>
+Date:   Fri Sep 13 04:35:30 2019 +0200
+
+    added comments
+
+commit 1c10b3c05c48a1ba6409a51e64879edccad6938a
+Author: Lawrence Godfrey <gdflaw001@myuct.ac.za>
+Date:   Sun Sep 8 16:27:37 2019 +0200
+
+    removed large cached files
+
+commit 2b3b61c8c3ec97ed7f6e4ff42171a2e0e60f5697
+Author: Lawrence Godfrey <gdflaw001@myuct.ac.za>
+Date:   Sun Sep 8 16:14:00 2019 +0200
+
+    sequential and threaded working
+
+commit 6e2c994337fc1e3968c085a46e5586384c29376a
+Author: Lawrence Godfrey <gdflaw001@myuct.ac.za>
+Date:   Sat Sep 7 12:04:38 2019 +0200
+
+    added threaded version (no speedup)
+
+commit ff33f62f93974c922aa6cd492705019a7c476eba
+Author: Lawrence Godfrey <gdflaw001@myuct.ac.za>
+Date:   Tue Sep 3 14:05:23 2019 +0200
+
+    sequential working
+
+commit e89b4eaf1774e9d0fa80cf2375b895828dacb0c5
+Author: Lawrence Godfrey <gdflaw001@myuct.ac.za>
+Date:   Mon Sep 2 23:35:22 2019 +0200
+
+    can find average wind vector
+
+commit 658188fa7c894229875b393c783e0ae40c9e382f
+Author: Lawrence Godfrey <gdflaw001@myuct.ac.za>
+Date:   Mon Sep 2 22:39:46 2019 +0200
+
+    initial commit
